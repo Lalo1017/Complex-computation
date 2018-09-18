@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.PBAutomataSimulator = new System.Windows.Forms.PictureBox();
             this.CHHistogram = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,15 +59,13 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
+            this.numericOnes = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.CBDead = new System.Windows.Forms.ComboBox();
+            this.CBAlive = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBAutomataSimulator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHHistogram)).BeginInit();
@@ -78,8 +76,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericOnes)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,16 +94,16 @@
             // 
             // CHHistogram
             // 
-            chartArea1.Name = "ChartArea1";
-            this.CHHistogram.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.CHHistogram.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.CHHistogram.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.CHHistogram.Legends.Add(legend2);
             this.CHHistogram.Location = new System.Drawing.Point(6, 19);
             this.CHHistogram.Name = "CHHistogram";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "#Ones";
-            this.CHHistogram.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "#Ones";
+            this.CHHistogram.Series.Add(series2);
             this.CHHistogram.Size = new System.Drawing.Size(584, 337);
             this.CHHistogram.TabIndex = 2;
             this.CHHistogram.Text = "chart1";
@@ -369,13 +366,11 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.numericUpDown2);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
-            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Controls.Add(this.numericOnes);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Location = new System.Drawing.Point(148, 438);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(168, 82);
+            this.groupBox5.Size = new System.Drawing.Size(92, 82);
             this.groupBox5.TabIndex = 16;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Random";
@@ -384,33 +379,18 @@
             // 
             this.button1.Location = new System.Drawing.Point(7, 55);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 23);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Generate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // numericUpDown2
+            // numericOnes
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(89, 32);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDown2.TabIndex = 3;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
-            this.numericUpDown1.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(107, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "0s";
+            this.numericOnes.Location = new System.Drawing.Point(6, 32);
+            this.numericOnes.Name = "numericOnes";
+            this.numericOnes.Size = new System.Drawing.Size(76, 20);
+            this.numericOnes.TabIndex = 2;
             // 
             // label7
             // 
@@ -423,8 +403,8 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox2);
-            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.CBDead);
+            this.groupBox6.Controls.Add(this.CBAlive);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Location = new System.Drawing.Point(358, 385);
@@ -434,14 +414,47 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Choose colors";
             // 
-            // label9
+            // CBDead
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Alive";
+            this.CBDead.FormattingEnabled = true;
+            this.CBDead.Items.AddRange(new object[] {
+            "White",
+            "Black",
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow",
+            "Violet"});
+            this.CBDead.Location = new System.Drawing.Point(108, 37);
+            this.CBDead.Name = "CBDead";
+            this.CBDead.Size = new System.Drawing.Size(81, 21);
+            this.CBDead.TabIndex = 3;
+            this.CBDead.SelectedIndexChanged += new System.EventHandler(this.CBDead_SelectedIndexChanged);
+            // 
+            // CBAlive
+            // 
+            this.CBAlive.AutoCompleteCustomSource.AddRange(new string[] {
+            "White",
+            "Black",
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow",
+            "Violet"});
+            this.CBAlive.FormattingEnabled = true;
+            this.CBAlive.Items.AddRange(new object[] {
+            "White",
+            "Black",
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow",
+            "Violet"});
+            this.CBAlive.Location = new System.Drawing.Point(11, 37);
+            this.CBAlive.Name = "CBAlive";
+            this.CBAlive.Size = new System.Drawing.Size(81, 21);
+            this.CBAlive.TabIndex = 2;
+            this.CBAlive.SelectedIndexChanged += new System.EventHandler(this.CBAlive_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -452,21 +465,14 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Dead";
             // 
-            // comboBox1
+            // label9
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(81, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(108, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(81, 21);
-            this.comboBox2.TabIndex = 3;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(34, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Alive";
             // 
             // button2
             // 
@@ -481,7 +487,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 619);
+            this.ClientSize = new System.Drawing.Size(1266, 614);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -509,8 +515,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericOnes)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -547,16 +552,13 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numericOnes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBDead;
+        private System.Windows.Forms.ComboBox CBAlive;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
     }
 }
-
