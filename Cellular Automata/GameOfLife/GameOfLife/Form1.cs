@@ -131,6 +131,11 @@ namespace GameOfLife{
                         int c_row = row + p_row;
                         int c_col = col + p_col;
 
+                        //We are in the center cell
+                        if (c_row == p_row && c_col == p_col)
+                        {
+                            continue;
+                        }
                         if (c_row == -1 && c_col == -1 & p_matrix[max_rows - 1, 0])
                             neighbors++;
                         else if (c_row == max_rows && c_col == max_cols && p_matrix[0, 0])
@@ -139,9 +144,9 @@ namespace GameOfLife{
                             neighbors++;
                         else if (c_row == max_rows && c_col == -1 && p_matrix[0, 0])
                             neighbors++;
+                        else 
 
-
-                        else if (c_row == -1 && p_matrix[max_rows - 1, c_col])
+                        if (c_row == -1 && p_matrix[max_rows - 1, c_col])
                             neighbors++;
                         else if (c_row == max_rows && p_matrix[0, c_col])
                             neighbors++;
