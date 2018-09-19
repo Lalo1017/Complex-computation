@@ -66,7 +66,14 @@
             this.CBAlive = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BTNSelectFile = new System.Windows.Forms.Button();
+            this.BTNClear = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numericRows = new System.Windows.Forms.NumericUpDown();
+            this.numericCols = new System.Windows.Forms.NumericUpDown();
+            this.BTNCreateMatrix = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBAutomataSimulator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHHistogram)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -78,6 +85,9 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericOnes)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRows)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCols)).BeginInit();
             this.SuspendLayout();
             // 
             // PBAutomataSimulator
@@ -140,7 +150,7 @@
             this.groupBox2.Controls.Add(this.ComboBXi);
             this.groupBox2.Location = new System.Drawing.Point(13, 383);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(129, 137);
+            this.groupBox2.Size = new System.Drawing.Size(107, 137);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rules";
@@ -148,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 111);
+            this.label5.Location = new System.Drawing.Point(11, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 7;
@@ -157,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 83);
+            this.label4.Location = new System.Drawing.Point(11, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 6;
@@ -166,7 +176,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 55);
+            this.label3.Location = new System.Drawing.Point(10, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 5;
@@ -175,7 +185,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 27);
+            this.label2.Location = new System.Drawing.Point(8, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 4;
@@ -193,7 +203,7 @@
             "6",
             "7",
             "8"});
-            this.ComboBY2i.Location = new System.Drawing.Point(67, 104);
+            this.ComboBY2i.Location = new System.Drawing.Point(47, 104);
             this.ComboBY2i.Name = "ComboBY2i";
             this.ComboBY2i.Size = new System.Drawing.Size(43, 21);
             this.ComboBY2i.TabIndex = 3;
@@ -210,7 +220,7 @@
             "6",
             "7",
             "8"});
-            this.ComboBX2i.Location = new System.Drawing.Point(67, 76);
+            this.ComboBX2i.Location = new System.Drawing.Point(47, 76);
             this.ComboBX2i.Name = "ComboBX2i";
             this.ComboBX2i.Size = new System.Drawing.Size(43, 21);
             this.ComboBX2i.TabIndex = 2;
@@ -227,7 +237,7 @@
             "6",
             "7",
             "8"});
-            this.ComboBYi.Location = new System.Drawing.Point(68, 48);
+            this.ComboBYi.Location = new System.Drawing.Point(48, 48);
             this.ComboBYi.Name = "ComboBYi";
             this.ComboBYi.Size = new System.Drawing.Size(43, 21);
             this.ComboBYi.TabIndex = 1;
@@ -244,7 +254,7 @@
             "6",
             "7",
             "8"});
-            this.ComboBXi.Location = new System.Drawing.Point(68, 20);
+            this.ComboBXi.Location = new System.Drawing.Point(48, 20);
             this.ComboBXi.Name = "ComboBXi";
             this.ComboBXi.Size = new System.Drawing.Size(43, 21);
             this.ComboBXi.TabIndex = 0;
@@ -285,7 +295,7 @@
             this.TBSpeed.Maximum = 3000;
             this.TBSpeed.Minimum = 10;
             this.TBSpeed.Name = "TBSpeed";
-            this.TBSpeed.Size = new System.Drawing.Size(578, 45);
+            this.TBSpeed.Size = new System.Drawing.Size(584, 45);
             this.TBSpeed.TabIndex = 10;
             this.TBSpeed.Value = 1000;
             this.TBSpeed.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -309,7 +319,7 @@
             this.groupBox3.Controls.Add(this.TBSpeed);
             this.groupBox3.Location = new System.Drawing.Point(13, 526);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(590, 69);
+            this.groupBox3.Size = new System.Drawing.Size(596, 69);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Speed";
@@ -317,7 +327,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(566, 51);
+            this.label6.Location = new System.Drawing.Point(572, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 13);
             this.label6.TabIndex = 12;
@@ -334,7 +344,7 @@
             // 
             // BTNZoomP
             // 
-            this.BTNZoomP.Location = new System.Drawing.Point(424, 477);
+            this.BTNZoomP.Location = new System.Drawing.Point(534, 405);
             this.BTNZoomP.Name = "BTNZoomP";
             this.BTNZoomP.Size = new System.Drawing.Size(75, 23);
             this.BTNZoomP.TabIndex = 13;
@@ -344,7 +354,7 @@
             // 
             // BTNZoomM
             // 
-            this.BTNZoomM.Location = new System.Drawing.Point(522, 477);
+            this.BTNZoomM.Location = new System.Drawing.Point(534, 438);
             this.BTNZoomM.Name = "BTNZoomM";
             this.BTNZoomM.Size = new System.Drawing.Size(75, 23);
             this.BTNZoomM.TabIndex = 14;
@@ -356,7 +366,7 @@
             // 
             this.groupBox4.Controls.Add(this.BTNStart);
             this.groupBox4.Controls.Add(this.BTNStep);
-            this.groupBox4.Location = new System.Drawing.Point(148, 383);
+            this.groupBox4.Location = new System.Drawing.Point(128, 383);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(168, 53);
             this.groupBox4.TabIndex = 15;
@@ -368,7 +378,7 @@
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.numericOnes);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Location = new System.Drawing.Point(148, 438);
+            this.groupBox5.Location = new System.Drawing.Point(166, 438);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(92, 82);
             this.groupBox5.TabIndex = 16;
@@ -407,9 +417,9 @@
             this.groupBox6.Controls.Add(this.CBAlive);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label9);
-            this.groupBox6.Location = new System.Drawing.Point(358, 385);
+            this.groupBox6.Location = new System.Drawing.Point(306, 385);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 69);
+            this.groupBox6.Size = new System.Drawing.Size(106, 135);
             this.groupBox6.TabIndex = 17;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Choose colors";
@@ -425,7 +435,7 @@
             "Green",
             "Yellow",
             "Violet"});
-            this.CBDead.Location = new System.Drawing.Point(108, 37);
+            this.CBDead.Location = new System.Drawing.Point(11, 102);
             this.CBDead.Name = "CBDead";
             this.CBDead.Size = new System.Drawing.Size(81, 21);
             this.CBDead.TabIndex = 3;
@@ -450,7 +460,7 @@
             "Green",
             "Yellow",
             "Violet"});
-            this.CBAlive.Location = new System.Drawing.Point(11, 37);
+            this.CBAlive.Location = new System.Drawing.Point(11, 45);
             this.CBAlive.Name = "CBAlive";
             this.CBAlive.Size = new System.Drawing.Size(81, 21);
             this.CBAlive.TabIndex = 2;
@@ -459,7 +469,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(133, 21);
+            this.label10.Location = new System.Drawing.Point(35, 85);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(33, 13);
             this.label10.TabIndex = 1;
@@ -468,27 +478,126 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 20);
+            this.label9.Location = new System.Drawing.Point(38, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Alive";
             // 
-            // button2
+            // BTNSelectFile
             // 
-            this.button2.Location = new System.Drawing.Point(322, 477);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Select a file";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTNSelectFile.Location = new System.Drawing.Point(534, 499);
+            this.BTNSelectFile.Name = "BTNSelectFile";
+            this.BTNSelectFile.Size = new System.Drawing.Size(75, 23);
+            this.BTNSelectFile.TabIndex = 18;
+            this.BTNSelectFile.Text = "Choose file";
+            this.BTNSelectFile.UseVisualStyleBackColor = true;
+            this.BTNSelectFile.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // BTNClear
+            // 
+            this.BTNClear.Location = new System.Drawing.Point(534, 470);
+            this.BTNClear.Name = "BTNClear";
+            this.BTNClear.Size = new System.Drawing.Size(75, 23);
+            this.BTNClear.TabIndex = 19;
+            this.BTNClear.Text = "Clear";
+            this.BTNClear.UseVisualStyleBackColor = true;
+            this.BTNClear.Click += new System.EventHandler(this.BTNClear_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.BTNCreateMatrix);
+            this.groupBox7.Controls.Add(this.numericCols);
+            this.groupBox7.Controls.Add(this.numericRows);
+            this.groupBox7.Controls.Add(this.label11);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Location = new System.Drawing.Point(418, 385);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(104, 135);
+            this.groupBox7.TabIndex = 20;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Size";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Rows";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Cols";
+            // 
+            // numericRows
+            // 
+            this.numericRows.Location = new System.Drawing.Point(11, 31);
+            this.numericRows.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericRows.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericRows.Name = "numericRows";
+            this.numericRows.Size = new System.Drawing.Size(81, 20);
+            this.numericRows.TabIndex = 2;
+            this.numericRows.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // numericCols
+            // 
+            this.numericCols.Location = new System.Drawing.Point(13, 71);
+            this.numericCols.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericCols.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericCols.Name = "numericCols";
+            this.numericCols.Size = new System.Drawing.Size(81, 20);
+            this.numericCols.TabIndex = 3;
+            this.numericCols.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // BTNCreateMatrix
+            // 
+            this.BTNCreateMatrix.Location = new System.Drawing.Point(13, 99);
+            this.BTNCreateMatrix.Name = "BTNCreateMatrix";
+            this.BTNCreateMatrix.Size = new System.Drawing.Size(81, 23);
+            this.BTNCreateMatrix.TabIndex = 21;
+            this.BTNCreateMatrix.Text = "Create";
+            this.BTNCreateMatrix.UseVisualStyleBackColor = true;
+            this.BTNCreateMatrix.Click += new System.EventHandler(this.BTNCreateMatrix_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 614);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1266, 615);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.BTNClear);
+            this.Controls.Add(this.BTNSelectFile);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -518,6 +627,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericOnes)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCols)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,6 +672,13 @@
         private System.Windows.Forms.ComboBox CBAlive;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTNSelectFile;
+        private System.Windows.Forms.Button BTNClear;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.NumericUpDown numericCols;
+        private System.Windows.Forms.NumericUpDown numericRows;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button BTNCreateMatrix;
     }
 }

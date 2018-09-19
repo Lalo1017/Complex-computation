@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
+using System.IO;
+using System.Collections;
 
 namespace GameOfLife
 {
@@ -107,10 +110,12 @@ namespace GameOfLife
                      * Here we need to evaluate using the rules given by input
                      **/
                     int neighbors = getAliveNeighbors(p_matrix, row, col);
+                    //If the cell is alive
                     if (p_matrix[row, col])
                     {
                         new_matrix[row, col] = (neighbors >= Xi && neighbors <= Yi);
                     }
+                    //If the central cell is dead
                     else
                     {
                         new_matrix[row, col] = (neighbors >= X2i && neighbors <= Y2i);
@@ -205,6 +210,7 @@ namespace GameOfLife
 
         private void step()
         {
+
             matrix = nextGeneration(matrix);
             countOnes();
             PBAutomataSimulator.Invalidate();
@@ -238,18 +244,6 @@ namespace GameOfLife
             CHHistogram.Series["#Ones"].Points.AddY(ones);
             TXTPopulation.Text = "Population " + ones;
         }
-        /*****************************************************
-         *                A better algorithm                 *
-         *****************************************************/
-
-
-        /*****************************************************
-         *                A better algorithm                 *
-         *****************************************************/
-
-
-
-
 
         /*****************************************************
          *                      Events                       *
@@ -365,6 +359,78 @@ namespace GameOfLife
                     }
                     else matrix[x, y] = false;
                 }
+            }
+            PBAutomataSimulator.Invalidate();
+        }
+
+        private void BTNClear_Click(object sender, EventArgs e)
+        {
+            for (int x = 0; x < matrix.GetLength(0); x++) {
+
+                for (int y = 0; y < matrix.GetLength(1); y++) {
+
+                    matrix[x, y] = false;
+                }
+            }
+            PBAutomataSimulator.Invalidate();
+        }
+
+        private void BTNCreateMatrix_Click(object sender, EventArgs e)
+        {
+            int rows = (numericRows.Value == 0) ? 100 : (int)numericRows.Value;
+            int cols = (numericCols.Value == 0) ? 100 : (int)numericCols.Value;
+            createMatrix(rows, cols);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int min_lines = 0;
+            int min_chara = 0;
+            String fileName = null;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
+                openFileDialog.InitialDirectory = "c\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt";
+                openFileDialog.FilterIndex = 2;
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                    fileName = openFileDialog.FileName;
+                }
+            }
+
+            if (fileName != null) {
+                Console.WriteLine(fileName);
+                StreamReader objectReader = new StreamReader(fileName);
+                //Reading the file, line per line
+                String line = "";
+                ArrayList arrayText = new ArrayList();
+                while (line != null) {
+                    line = objectReader.ReadLine();
+                    if (line != null)
+                        arrayText.Add(line);
+                }
+                objectReader.Close();
+                //Iterate into the ArrayList and send the information to the GUI
+                min_lines = arrayText.Count;
+                min_chara = arrayText[0].ToString().Length;
+
+                if (min_lines < matrix.GetLength(0) && min_chara < matrix.GetLength(1))
+                {
+                    createMatrix(min_chara, min_lines);
+                    for (int i = 0; i < min_lines; i++) {
+                        for (int j = 0; j < min_chara; j++) {
+                            string strlne = arrayText[i].ToString();
+                            if (strlne[j] != ' ')
+                                matrix[j, i] = (strlne[j] == '1');
+                        }
+                    }
+                }
+                else {
+                    int x_m = matrix.GetLength(0);
+                    int y_m = matrix.GetLength(1);
+
+                    
+                }
+                Console.ReadLine();
             }
             PBAutomataSimulator.Invalidate();
         }
