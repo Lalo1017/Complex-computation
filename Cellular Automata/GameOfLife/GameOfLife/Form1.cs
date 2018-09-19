@@ -30,6 +30,9 @@ namespace GameOfLife
         private Brush dead = Brushes.Black;
 
         private String[] colors = { "White", "Black", "Red", "Blue", "Green", "Yellow", "Violet"};
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -50,6 +53,11 @@ namespace GameOfLife
             scrollBox();
         }
 
+        /// <summary>
+        /// This method paints the matrix in the Paint Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PBAutomataSimulator_Paint(object sender, PaintEventArgs e)
         {
 
@@ -207,6 +215,10 @@ namespace GameOfLife
             return neighbors;
         }
 
+        /// <summary>
+        /// This method calls nextGeneration method and
+        /// updates the GUI and the count of our alive cells
+        /// </summary>
         private void step()
         {
 
@@ -216,11 +228,19 @@ namespace GameOfLife
 
         }
 
+        /// <summary>
+        /// Here we just change the text that show us
+        /// the number of generations
+        /// </summary>
         private void updateTextGeneration()
         {
             TXTGeneration.Text = "Generation: " + generation++;
         }
 
+        /// <summary>
+        /// This method make a rezise of the Paint Box and flow layout panel
+        /// it makes possible make zoom and the movement into the GUI
+        /// </summary>
         private void scrollBox()
         {
             PBAutomataSimulator.Size = new Size((matrix.GetLength(0)) * cellArea, (matrix.GetLength(1)) * cellArea);
@@ -229,6 +249,10 @@ namespace GameOfLife
             flowLayoutPanel1.Controls.Add(PBAutomataSimulator);
         }
 
+        /// <summary>
+        /// As you can imagine here we just get the number of ones
+        /// in our matrix (alive cells)
+        /// </summary>
         private void countOnes()
         {
             int ones = 0;
@@ -387,84 +411,93 @@ namespace GameOfLife
             int min_chara = 0;
             String fileName = null;
 
-            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
-                openFileDialog.InitialDirectory = "c\\";
-                openFileDialog.Filter = "txt files (*.txt)|*.txt";
-                openFileDialog.FilterIndex = 2;
-                if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                    fileName = openFileDialog.FileName;
-                }
-            }
-
-            if (fileName != null) {
-                Console.WriteLine(fileName);
-                StreamReader objectReader = new StreamReader(fileName);
-                //Reading the file, line per line
-                String line = "";
-                ArrayList arrayText = new ArrayList();
-                while (line != null) {
-                    line = objectReader.ReadLine();
-                    if (line != null)
-                        arrayText.Add(line);
-                }
-                objectReader.Close();
-                //Iterate into the ArrayList and send the information to the GUI
-                min_lines = arrayText.Count;
-                min_chara = arrayText[0].ToString().Length;
-                
-                Console.WriteLine(min_chara);
-                Console.WriteLine(min_lines);
-                if (min_chara > matrix.GetLength(1) && min_lines > matrix.GetLength(0))
+            try
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    createMatrix(min_chara, min_lines);
-
-                    for (int i = 0; i < min_lines; i++) {
-                        string strlne = arrayText[i].ToString();
-                        for (int j = 0; j < min_chara; j++) {
-                            if( strlne[j] == '1' || strlne[j] == '0')
-                                 matrix[i,j] = (strlne[j] == '1');
-                        }
+                    openFileDialog.InitialDirectory = "c\\";
+                    openFileDialog.Filter = "txt files (*.txt)|*.txt";
+                    openFileDialog.FilterIndex = 2;
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        fileName = openFileDialog.FileName;
                     }
                 }
-                else {
-                    int x_m = matrix.GetLength(0);
-                    int y_m = matrix.GetLength(1);
+
+                if (fileName != null)
+                {
+                    Console.WriteLine(fileName);
+                    StreamReader objectReader = new StreamReader(fileName);
+                    //Reading the file, line per line
+                    String line = "";
+                    ArrayList arrayText = new ArrayList();
+                    while (line != null)
+                    {
+                        line = objectReader.ReadLine();
+                        if (line != null)
+                            arrayText.Add(line);
+                    }
+                    objectReader.Close();
+                    //Iterate into the ArrayList and send the information to the GUI
+                    min_lines = arrayText.Count;
+                    min_chara = arrayText[0].ToString().Length;
+
+                    Console.WriteLine(min_chara);
+                    Console.WriteLine(min_lines);
+                    if (min_chara > matrix.GetLength(1) && min_lines > matrix.GetLength(0))
+                    {
+                        createMatrix(min_chara, min_lines);
+                    }
                     for (int i = 0; i < min_lines; i++)
                     {
-                        string strlne = arrayText[i].ToString();
-                        for (int j = 0; j < min_chara; j++)
+                        string strlne = arrayText[i].ToString().Trim();
+                        int j = 0;
+
+                        foreach (char c in strlne)
                         {
-                            if (strlne[j] == '1' || strlne[j] == '0')
-                                matrix[i, j] = (strlne[j] == '1');
+                            matrix[j++, i] = (c == '1');
                         }
                     }
-
+                    Console.ReadLine();
                 }
-                Console.ReadLine();
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
             }
             PBAutomataSimulator.Invalidate();
         }
 
         private void BTNSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivo de texto|*.txt";
-            saveFileDialog.Title = "Actual state cellular automata";
-            saveFileDialog.ShowDialog();
-            if (saveFileDialog != null) {
-                StreamWriter sw = new StreamWriter(saveFileDialog.OpenFile());
-                for (int i = 0; i < matrix.GetLength(0); i++) {
 
-                    for (int j = 0; j < matrix.GetLength(1); j++) {
-                        if (matrix[i, j])
-                            sw.Write("1");
-                        else if (!matrix[i, j])
-                            sw.Write("0");
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Archivo de texto|*.txt";
+                saveFileDialog.Title = "Actual state cellular automata";
+                saveFileDialog.ShowDialog();
+                if (saveFileDialog != null)
+                {
+                    StreamWriter sw = new StreamWriter(saveFileDialog.OpenFile());
+                    for (int i = 0; i < matrix.GetLength(0); i++)
+                    {
+
+                        for (int j = 0; j < matrix.GetLength(1); j++)
+                        {
+                            if (matrix[j, i])
+                                sw.Write("1");
+                            else if (!matrix[i, j])
+                                sw.Write("0");
+                        }
+                        sw.WriteLine();
                     }
-                    sw.WriteLine();
+                    sw.Close();
                 }
-                sw.Close();
             }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+
         }
     }
 }
