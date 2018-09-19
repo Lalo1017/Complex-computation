@@ -46,7 +46,7 @@ namespace GameOfLife
         /// <param name="cols"></param>
         private void createMatrix(int rows, int cols)
         {
-            matrix = new bool[rows, cols];
+            matrix = new bool[cols, rows];
             scrollBox();
         }
 
@@ -198,7 +198,6 @@ namespace GameOfLife
                         }
 
                     }
-
                 }
             }
             catch (Exception e)
@@ -412,27 +411,60 @@ namespace GameOfLife
                 //Iterate into the ArrayList and send the information to the GUI
                 min_lines = arrayText.Count;
                 min_chara = arrayText[0].ToString().Length;
-
-                if (min_lines < matrix.GetLength(0) && min_chara < matrix.GetLength(1))
+                
+                Console.WriteLine(min_chara);
+                Console.WriteLine(min_lines);
+                if (min_chara > matrix.GetLength(1) && min_lines > matrix.GetLength(0))
                 {
                     createMatrix(min_chara, min_lines);
+
                     for (int i = 0; i < min_lines; i++) {
+                        string strlne = arrayText[i].ToString();
                         for (int j = 0; j < min_chara; j++) {
-                            string strlne = arrayText[i].ToString();
-                            if (strlne[j] != ' ')
-                                matrix[j, i] = (strlne[j] == '1');
+                            if( strlne[j] == '1' || strlne[j] == '0')
+                                 matrix[i,j] = (strlne[j] == '1');
                         }
                     }
                 }
                 else {
                     int x_m = matrix.GetLength(0);
                     int y_m = matrix.GetLength(1);
+                    for (int i = 0; i < min_lines; i++)
+                    {
+                        string strlne = arrayText[i].ToString();
+                        for (int j = 0; j < min_chara; j++)
+                        {
+                            if (strlne[j] == '1' || strlne[j] == '0')
+                                matrix[i, j] = (strlne[j] == '1');
+                        }
+                    }
 
-                    
                 }
                 Console.ReadLine();
             }
             PBAutomataSimulator.Invalidate();
+        }
+
+        private void BTNSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivo de texto|*.txt";
+            saveFileDialog.Title = "Actual state cellular automata";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog != null) {
+                StreamWriter sw = new StreamWriter(saveFileDialog.OpenFile());
+                for (int i = 0; i < matrix.GetLength(0); i++) {
+
+                    for (int j = 0; j < matrix.GetLength(1); j++) {
+                        if (matrix[i, j])
+                            sw.Write("1");
+                        else if (!matrix[i, j])
+                            sw.Write("0");
+                    }
+                    sw.WriteLine();
+                }
+                sw.Close();
+            }
         }
     }
 }

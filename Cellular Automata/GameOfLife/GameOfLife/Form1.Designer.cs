@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.PBAutomataSimulator = new System.Windows.Forms.PictureBox();
             this.CHHistogram = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -74,6 +74,8 @@
             this.numericRows = new System.Windows.Forms.NumericUpDown();
             this.numericCols = new System.Windows.Forms.NumericUpDown();
             this.BTNCreateMatrix = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.BTNSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBAutomataSimulator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHHistogram)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -88,6 +90,7 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCols)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // PBAutomataSimulator
@@ -104,16 +107,16 @@
             // 
             // CHHistogram
             // 
-            chartArea2.Name = "ChartArea1";
-            this.CHHistogram.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.CHHistogram.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.CHHistogram.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.CHHistogram.Legends.Add(legend1);
             this.CHHistogram.Location = new System.Drawing.Point(6, 19);
             this.CHHistogram.Name = "CHHistogram";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "#Ones";
-            this.CHHistogram.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "#Ones";
+            this.CHHistogram.Series.Add(series1);
             this.CHHistogram.Size = new System.Drawing.Size(584, 337);
             this.CHHistogram.TabIndex = 2;
             this.CHHistogram.Text = "chart1";
@@ -295,7 +298,7 @@
             this.TBSpeed.Maximum = 3000;
             this.TBSpeed.Minimum = 10;
             this.TBSpeed.Name = "TBSpeed";
-            this.TBSpeed.Size = new System.Drawing.Size(584, 45);
+            this.TBSpeed.Size = new System.Drawing.Size(491, 45);
             this.TBSpeed.TabIndex = 10;
             this.TBSpeed.Value = 1000;
             this.TBSpeed.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -319,7 +322,7 @@
             this.groupBox3.Controls.Add(this.TBSpeed);
             this.groupBox3.Location = new System.Drawing.Point(13, 526);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(596, 69);
+            this.groupBox3.Size = new System.Drawing.Size(497, 69);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Speed";
@@ -327,7 +330,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(572, 51);
+            this.label6.Location = new System.Drawing.Point(479, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 13);
             this.label6.TabIndex = 12;
@@ -486,7 +489,7 @@
             // 
             // BTNSelectFile
             // 
-            this.BTNSelectFile.Location = new System.Drawing.Point(534, 499);
+            this.BTNSelectFile.Location = new System.Drawing.Point(3, 17);
             this.BTNSelectFile.Name = "BTNSelectFile";
             this.BTNSelectFile.Size = new System.Drawing.Size(75, 23);
             this.BTNSelectFile.TabIndex = 18;
@@ -590,14 +593,35 @@
             this.BTNCreateMatrix.UseVisualStyleBackColor = true;
             this.BTNCreateMatrix.Click += new System.EventHandler(this.BTNCreateMatrix_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.BTNSave);
+            this.groupBox8.Controls.Add(this.BTNSelectFile);
+            this.groupBox8.Location = new System.Drawing.Point(531, 515);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(81, 75);
+            this.groupBox8.TabIndex = 21;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "File options";
+            // 
+            // BTNSave
+            // 
+            this.BTNSave.Location = new System.Drawing.Point(3, 44);
+            this.BTNSave.Name = "BTNSave";
+            this.BTNSave.Size = new System.Drawing.Size(75, 23);
+            this.BTNSave.TabIndex = 0;
+            this.BTNSave.Text = "Save states";
+            this.BTNSave.UseVisualStyleBackColor = true;
+            this.BTNSave.Click += new System.EventHandler(this.BTNSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 615);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.BTNClear);
-            this.Controls.Add(this.BTNSelectFile);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -631,6 +655,7 @@
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCols)).EndInit();
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -680,5 +705,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button BTNCreateMatrix;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button BTNSave;
     }
 }
