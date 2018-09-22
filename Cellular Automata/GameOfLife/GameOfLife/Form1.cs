@@ -17,6 +17,8 @@ namespace GameOfLife
         private bool[,] matrix;
 
         private int cellArea = 10;
+        private long acumOnes = 0;
+
         private int generation = 1;
 
         private Brush alive = Brushes.White;
@@ -257,8 +259,14 @@ namespace GameOfLife
                     if (matrix[x, y]) ones++;
                 }
             }
+            
             CHHistogram.Series["#Ones"].Points.AddY(ones);
             TXTPopulation.Text = "Population " + ones;
+            acumOnes += ones;
+            double val = acumOnes / generation;
+            label12.Text = "Total Population: " + acumOnes;
+            label13.Text = "Prom: " + ( val );
+            label14.Text = "Result: " + (val / (matrix.GetLength(0) * matrix.GetLength(1)));
         }
 
         /*****************************************************
@@ -381,6 +389,7 @@ namespace GameOfLife
 
         private void BTNClear_Click(object sender, EventArgs e)
         {
+            CHHistogram.Series["#Ones"].Points.Clear();
             for (int x = 0; x < matrix.GetLength(0); x++) {
 
                 for (int y = 0; y < matrix.GetLength(1); y++) {
@@ -389,6 +398,8 @@ namespace GameOfLife
                 }
             }
             PBAutomataSimulator.Invalidate();
+            acumOnes = generation = 0;
+
         }
 
         private void BTNCreateMatrix_Click(object sender, EventArgs e)

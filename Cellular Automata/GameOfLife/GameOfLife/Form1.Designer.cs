@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.PBAutomataSimulator = new System.Windows.Forms.PictureBox();
             this.CHHistogram = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,13 +69,16 @@
             this.BTNSelectFile = new System.Windows.Forms.Button();
             this.BTNClear = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numericRows = new System.Windows.Forms.NumericUpDown();
-            this.numericCols = new System.Windows.Forms.NumericUpDown();
             this.BTNCreateMatrix = new System.Windows.Forms.Button();
+            this.numericCols = new System.Windows.Forms.NumericUpDown();
+            this.numericRows = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.BTNSave = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBAutomataSimulator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHHistogram)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -88,8 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericOnes)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCols)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRows)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,16 +110,16 @@
             // 
             // CHHistogram
             // 
-            chartArea1.Name = "ChartArea1";
-            this.CHHistogram.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.CHHistogram.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.CHHistogram.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.CHHistogram.Legends.Add(legend4);
             this.CHHistogram.Location = new System.Drawing.Point(6, 19);
             this.CHHistogram.Name = "CHHistogram";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "#Ones";
-            this.CHHistogram.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "#Ones";
+            this.CHHistogram.Series.Add(series4);
             this.CHHistogram.Size = new System.Drawing.Size(584, 337);
             this.CHHistogram.TabIndex = 2;
             this.CHHistogram.Text = "chart1";
@@ -276,7 +279,7 @@
             // TXTPopulation
             // 
             this.TXTPopulation.AutoSize = true;
-            this.TXTPopulation.Location = new System.Drawing.Point(947, 598);
+            this.TXTPopulation.Location = new System.Drawing.Point(749, 598);
             this.TXTPopulation.Name = "TXTPopulation";
             this.TXTPopulation.Size = new System.Drawing.Size(57, 13);
             this.TXTPopulation.TabIndex = 8;
@@ -521,45 +524,15 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Size";
             // 
-            // label8
+            // BTNCreateMatrix
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Rows";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Cols";
-            // 
-            // numericRows
-            // 
-            this.numericRows.Location = new System.Drawing.Point(11, 31);
-            this.numericRows.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericRows.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericRows.Name = "numericRows";
-            this.numericRows.Size = new System.Drawing.Size(81, 20);
-            this.numericRows.TabIndex = 2;
-            this.numericRows.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.BTNCreateMatrix.Location = new System.Drawing.Point(13, 99);
+            this.BTNCreateMatrix.Name = "BTNCreateMatrix";
+            this.BTNCreateMatrix.Size = new System.Drawing.Size(81, 23);
+            this.BTNCreateMatrix.TabIndex = 21;
+            this.BTNCreateMatrix.Text = "Create";
+            this.BTNCreateMatrix.UseVisualStyleBackColor = true;
+            this.BTNCreateMatrix.Click += new System.EventHandler(this.BTNCreateMatrix_Click);
             // 
             // numericCols
             // 
@@ -583,15 +556,45 @@
             0,
             0});
             // 
-            // BTNCreateMatrix
+            // numericRows
             // 
-            this.BTNCreateMatrix.Location = new System.Drawing.Point(13, 99);
-            this.BTNCreateMatrix.Name = "BTNCreateMatrix";
-            this.BTNCreateMatrix.Size = new System.Drawing.Size(81, 23);
-            this.BTNCreateMatrix.TabIndex = 21;
-            this.BTNCreateMatrix.Text = "Create";
-            this.BTNCreateMatrix.UseVisualStyleBackColor = true;
-            this.BTNCreateMatrix.Click += new System.EventHandler(this.BTNCreateMatrix_Click);
+            this.numericRows.Location = new System.Drawing.Point(11, 31);
+            this.numericRows.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericRows.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericRows.Name = "numericRows";
+            this.numericRows.Size = new System.Drawing.Size(81, 20);
+            this.numericRows.TabIndex = 2;
+            this.numericRows.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Cols";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Rows";
             // 
             // groupBox8
             // 
@@ -614,11 +617,41 @@
             this.BTNSave.UseVisualStyleBackColor = true;
             this.BTNSave.Click += new System.EventHandler(this.BTNSave_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(889, 598);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 13);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Total population";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1055, 598);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 13);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Prom";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1175, 598);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Result";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 615);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.BTNClear);
@@ -653,8 +686,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCols)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRows)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -707,5 +740,8 @@
         private System.Windows.Forms.Button BTNCreateMatrix;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button BTNSave;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
