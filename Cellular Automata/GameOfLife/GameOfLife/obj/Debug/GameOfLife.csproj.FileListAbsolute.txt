@@ -1,9 +1,0 @@
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe.config
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\bin\Debug\GameOfLife.pdb
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\obj\Debug\GameOfLife.Form1.resources
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\obj\Debug\GameOfLife.Properties.Resources.resources
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.GenerateResource.Cache
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
-C:\Users\Erick\Documents\GitHub\Complex-computation\Cellular Automata\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csprojResolveAssemblyReference.cache
