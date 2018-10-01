@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.PBAutomataSimulator = new System.Windows.Forms.PictureBox();
             this.CHHistogram = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -79,6 +79,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.CheckGraphEnabled = new System.Windows.Forms.CheckBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBAutomataSimulator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHHistogram)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -94,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericCols)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRows)).BeginInit();
             this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // PBAutomataSimulator
@@ -110,16 +115,16 @@
             // 
             // CHHistogram
             // 
-            chartArea1.Name = "ChartArea1";
-            this.CHHistogram.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.CHHistogram.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.CHHistogram.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.CHHistogram.Legends.Add(legend9);
             this.CHHistogram.Location = new System.Drawing.Point(6, 19);
             this.CHHistogram.Name = "CHHistogram";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "#Ones";
-            this.CHHistogram.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "#Ones";
+            this.CHHistogram.Series.Add(series9);
             this.CHHistogram.Size = new System.Drawing.Size(584, 337);
             this.CHHistogram.TabIndex = 2;
             this.CHHistogram.Text = "chart1";
@@ -270,7 +275,7 @@
             this.TXTGeneration.AutoSize = true;
             this.TXTGeneration.BackColor = System.Drawing.Color.Transparent;
             this.TXTGeneration.ForeColor = System.Drawing.Color.Black;
-            this.TXTGeneration.Location = new System.Drawing.Point(615, 598);
+            this.TXTGeneration.Location = new System.Drawing.Point(6, 26);
             this.TXTGeneration.Name = "TXTGeneration";
             this.TXTGeneration.Size = new System.Drawing.Size(62, 13);
             this.TXTGeneration.TabIndex = 7;
@@ -279,7 +284,7 @@
             // TXTPopulation
             // 
             this.TXTPopulation.AutoSize = true;
-            this.TXTPopulation.Location = new System.Drawing.Point(749, 598);
+            this.TXTPopulation.Location = new System.Drawing.Point(6, 48);
             this.TXTPopulation.Name = "TXTPopulation";
             this.TXTPopulation.Size = new System.Drawing.Size(57, 13);
             this.TXTPopulation.TabIndex = 8;
@@ -301,7 +306,7 @@
             this.TBSpeed.Maximum = 3000;
             this.TBSpeed.Minimum = 10;
             this.TBSpeed.Name = "TBSpeed";
-            this.TBSpeed.Size = new System.Drawing.Size(491, 45);
+            this.TBSpeed.Size = new System.Drawing.Size(233, 45);
             this.TBSpeed.TabIndex = 10;
             this.TBSpeed.Value = 1000;
             this.TBSpeed.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -312,10 +317,16 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.PBAutomataSimulator);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(615, 12);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(639, 669);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(639, 583);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(639, 669);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // groupBox3
@@ -323,9 +334,9 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.TBSpeed);
-            this.groupBox3.Location = new System.Drawing.Point(13, 526);
+            this.groupBox3.Location = new System.Drawing.Point(16, 612);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(497, 69);
+            this.groupBox3.Size = new System.Drawing.Size(242, 69);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Speed";
@@ -333,7 +344,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(479, 53);
+            this.label6.Location = new System.Drawing.Point(217, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 13);
             this.label6.TabIndex = 12;
@@ -600,7 +611,7 @@
             // 
             this.groupBox8.Controls.Add(this.BTNSave);
             this.groupBox8.Controls.Add(this.BTNSelectFile);
-            this.groupBox8.Location = new System.Drawing.Point(531, 515);
+            this.groupBox8.Location = new System.Drawing.Point(149, 536);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(81, 75);
             this.groupBox8.TabIndex = 21;
@@ -620,7 +631,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(889, 598);
+            this.label12.Location = new System.Drawing.Point(6, 70);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 13);
             this.label12.TabIndex = 22;
@@ -629,7 +640,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1055, 598);
+            this.label13.Location = new System.Drawing.Point(6, 92);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 13);
             this.label13.TabIndex = 23;
@@ -638,20 +649,55 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1175, 598);
+            this.label14.Location = new System.Drawing.Point(6, 114);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(42, 13);
             this.label14.TabIndex = 24;
             this.label14.Text = "Density";
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.CheckGraphEnabled);
+            this.groupBox9.Location = new System.Drawing.Point(15, 548);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(104, 50);
+            this.groupBox9.TabIndex = 25;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Graph options";
+            // 
+            // CheckGraphEnabled
+            // 
+            this.CheckGraphEnabled.AutoSize = true;
+            this.CheckGraphEnabled.Checked = true;
+            this.CheckGraphEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckGraphEnabled.Location = new System.Drawing.Point(16, 21);
+            this.CheckGraphEnabled.Name = "CheckGraphEnabled";
+            this.CheckGraphEnabled.Size = new System.Drawing.Size(59, 17);
+            this.CheckGraphEnabled.TabIndex = 0;
+            this.CheckGraphEnabled.Text = "Enable";
+            this.CheckGraphEnabled.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.TXTGeneration);
+            this.groupBox10.Controls.Add(this.TXTPopulation);
+            this.groupBox10.Controls.Add(this.label14);
+            this.groupBox10.Controls.Add(this.label12);
+            this.groupBox10.Controls.Add(this.label13);
+            this.groupBox10.Location = new System.Drawing.Point(264, 526);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(345, 155);
+            this.groupBox10.TabIndex = 26;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Data";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 615);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.ClientSize = new System.Drawing.Size(1266, 695);
+            this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.BTNClear);
@@ -661,8 +707,6 @@
             this.Controls.Add(this.BTNZoomM);
             this.Controls.Add(this.BTNZoomP);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.TXTPopulation);
-            this.Controls.Add(this.TXTGeneration);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -689,8 +733,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericCols)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRows)).EndInit();
             this.groupBox8.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -714,7 +761,6 @@
         private System.Windows.Forms.Button BTNStep;
         private System.Windows.Forms.TrackBar TBSpeed;
         private System.Windows.Forms.Timer TimerSimulation;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
@@ -743,5 +789,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.CheckBox CheckGraphEnabled;
+        private System.Windows.Forms.GroupBox groupBox10;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

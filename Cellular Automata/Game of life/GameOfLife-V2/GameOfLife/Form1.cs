@@ -260,7 +260,8 @@ namespace GameOfLife
                 }
             }
             
-            CHHistogram.Series["#Ones"].Points.AddY(ones);
+            if(CheckGraphEnabled.Checked)
+                CHHistogram.Series["#Ones"].Points.AddY(ones);
             TXTPopulation.Text = "Population " + ones;
             acumOnes += ones;
             double val = acumOnes / generation;
@@ -290,7 +291,7 @@ namespace GameOfLife
                         /**     CORNERS     **/
                         //Up-left
                         if (X == 0 && Y == 0) {
-                            sub_matrix[X,Y] = ;
+                            //sub_matrix[X,Y] = ;
                         }
 
                         //Up-right
@@ -353,7 +354,7 @@ namespace GameOfLife
 
         private void BTNZoomP_Click(object sender, EventArgs e)
         {
-            if (cellArea < 20)
+            if (cellArea < 50)
             {
                 cellArea++;
                 PBAutomataSimulator.Invalidate();
